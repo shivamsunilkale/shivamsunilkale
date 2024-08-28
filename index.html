@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>input page</title>
+        <style>
+            body
+            {
+                background-image: url('fbk6.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .pname
+            {
+                background-image: url('fbk3.jpg');
+                background-size: cover;
+                filter: brightness(100%);
+                width: 300px;
+                border: 1px solid black;
+                padding-top: 50px;
+                padding-right: 40px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+                border-radius: 20px;
+                box-shadow: 10px 4px 8px black;
+                transform:rotate(-2deg);
+                position: relative;
+                top: 70px;
+                left: 570px;
+            }
+            .ic
+            {
+                width: 200px;
+                height: 30px;
+                font-size: 30;
+            }
+        </style>
+        <script src="jquery.js"></script>
+        <script>
+            $("document").ready(function()
+            {
+                $("#sub").click(function()
+                {
+                    if(($("#n1").val()!='') && ($("#n2").val()!=''))
+                    {
+                        if(($("#n1").val()) == ($("#n2").val()))
+                        {
+                            alert("BOTH TEAM CAN NOT HAVE SAME NAME");
+                        }
+                        else
+                        {
+                              localStorage.setItem('t1',$("#n1").val());
+                              localStorage.setItem('t2',$("#n2").val());
+                            $(".pname").fadeOut(2000,function(){
+                                var res='<div style="color: white; font-weight:bolder; font-size: 30px;"> ' + $("#n1").val() + ' vs ' + $("#n2").val() + '<br><a href="main.html" style="color:white;">Go>>>></a></div>';
+                                $("#pd").replaceWith(res);
+                                $(".pname").fadeIn(2000);
+                            });
+                           
+                        }
+                        
+                    }
+                    else
+                    {
+                        alert("ENTER THE BOTH TEAM NAME FIRST");
+                    }
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+            <div class="pname">
+                <div id="pd">
+                <div style="color: white; font-weight:bolder; font-size: 30px;">TEAM 1:</div><br>
+                <input class="ic" name="pn1" id="n1"><br><br>
+                <div style="color: white; font-weight: bolder; font-size: 30px"><b>TEAM 2:</b></div><br>
+                <input class="ic" name="pn2" id="n2"><br>
+                <button type="button" id="sub">ENTER</button>
+                </div>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+    <style>
+       #bv{
+height: auto;
+width: auto;
+        min-height: 100%;
+        min-width: 100%;
+       }
+       body{
+        background: url('video.mp4');
+       }
+       .btn{
+        background-color: rgb(11, 175, 235);
+        border: 7.5px solid white;
+        border-radius: 15px;
+        padding: 15px;
+        color: white;
+        text-shadow: 1px 1px 3px black;
+        font-family: forte;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 17%;
+        height: 15%;
+        transition: transform 0.5s ease;
+       }
+       .btn:hover{
+        transform: scale(1.1);
+       box-shadow: 3px 3px 20px red;
+       }
+       .hd{
+        font-family: Snap ITC;
+        font-size: 150px;
+        color: red;
+        text-shadow: 2px 5px 2px black;
+        transform:rotate(-6deg);
+       }
+       
+        </style>
+</head>
+<body> 
+    <video autoplay muted loop id="bv" src="video.mp4" height=500px; width=1017px;></video>
+    <p class="hd" style="position: absolute; top: -12%; left: 20.5%">Strati-Ball</p>
+    <a href="index.html"><button class="btn" style="position: absolute; top: 42.5%; left: 43.5%;">Start</button></a>
+    <a href="howtoplay.html"><button class="btn" style="position: absolute; top: 62.5%; left: 43.5%;">How To Play</button></a>    
+    <a href="about.html"><button class="btn" style="position: absolute; top: 82.5%; left: 43.5%;">About Us</button></a>
+</body>
+</html>

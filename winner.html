@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <style>
+            body
+                {
+                    background-image:url('fbk7.jpg');
+                    background-size: 100% 100%;
+                    background-repeat:no-repeat;
+                    background-attachment: fixed;
+
+                }
+            .pname{
+              background-image: url('cup.gif');
+                background-size: cover;
+                filter: brightness(100%);
+                width: 300px;
+	    	    height: 300px;
+                border: 1px solid black;
+                padding-top: 50px;
+                padding-right: 40px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+                border-radius: 50%;
+                box-shadow: 10px 4px 8px black;
+                position: relative;
+                top: 70px;
+                left: 200px;
+            }
+            .bl{
+            background-color: rgb(52, 156, 226);
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding-top: 17px;
+        }
+ .rd{
+            background-color: rgb(255, 64, 64);
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding-top: 17px;
+        }
+.nm{
+    font-size: 42.5px;
+    font-family: Dubai;
+    font-weight: bold;
+    text-align: left;
+  }
+.score{
+           
+           height: 60px;
+           width: 100px;
+           border-radius: 5px;
+           color: black;
+           font-family: pixel;
+           background-color: white;
+           font-size: 55px;
+           text-align: center;
+           padding-left: 15px;
+           padding-right: 15px;
+           padding-top: 5px;
+           padding-bottom: 5px;
+      }
+       
+.bor{
+        background-color: black;
+        border: 2px solid white;
+        width:20px;
+        padding-left: 2px;
+        padding-right: 2px;
+        color: white;
+        border-radius: 4px;
+        font-family: calibri;
+       }
+        
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pname{
+              background-image: url('cup.gif');
+                background-size: cover;
+                background-position: center;
+                filter: brightness(100%);
+                width: 300px;
+        		height: 300px;
+                border: 1px solid black;
+                padding-top: 50px;
+                padding-right: 40px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+                border-radius: 50%;
+                box-shadow: 10px 4px 8px black;
+                position: relative;
+                top: -400px;
+                left: 200px;
+            }
+.pname2{
+                background-image: url('loss.gif');
+                background-size: cover;
+                background-position: center;
+                filter: brightness(100%);
+                width: 300px;
+        		height: 300px;
+                border: 1px solid black;
+                padding-top: 50px;
+                padding-right: 40px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+                border-radius: 50%;
+                box-shadow: 10px 4px 8px black;
+                position: relative;
+                top: -15%;
+                left: 200%;
+            }
+button{
+                background-color: green;
+                color:white;
+                width: 130px;
+                height: 53px;
+                margin: 225px 687px;
+                cursor: pointer; 
+                transition: transform 0.3s;  
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+        </style>
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                var w=$("#aud1")[0];
+                var crowd=$("#aud2")[0];
+                var s1=localStorage.getItem('score1');
+                var s2=localStorage.getItem('score2');
+                $("#p1").text(localStorage.getItem('t1'));
+                $("#p2").text(localStorage.getItem('t2'));
+                $("#s1").text(s1);
+                $("#s2").text(s2);
+                if(s1>s2)
+                {
+                    
+                    $('.pname').css('background-image','url("cup.gif")');
+                    $('.pname2').css('background-image','url("loss.gif")');
+                }
+                else if(s1<s2)
+                {
+                    $('.pname').css('background-image','url("loss.gif")');
+                    $('.pname2').css('background-image','url("cup.gif")');
+                }
+                else
+                {
+                    $('.pname').css('background-image','url("cup.gif")');
+                    $('.pname2').css('background-image','url("cup.gif")');
+                }
+                $(document.body).click(function(){w.play(); crowd.play();});
+            });
+        </script>    
+    </head>
+    <body>
+        <table id="t1">
+            <tr>
+                <td class="rd">
+                    <span class="nm" id="p1">Team 1</span>&nbsp<span class="score" id="s1">00</span>
+        
+                </td>
+        <td>
+          <span class="time" style="background-color: black; width: 30px; height: 30px;color: white; font-size: 30px;" id="time">00:00</span>
+        </td>
+                <td class="bl">
+                    <span class="nm" id="p2">Team 2</span>&nbsp<span class="score" id="s2">00</span>
+                    
+                </td>
+             </tr>
+        </table>
+         <a href="main.html"><button>REMATCH</button></a>
+         <a href="homepage.html">
+            <div class="pname">
+            <div class="pname2">
+        </div>
+        </div>
+    </a>
+    <audio id="aud1"><source src="win-music.mp3"></audio>
+    <audio id="aud2"><source src="crowd.mp3"></audio>
+    </body>
+</html>

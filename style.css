@@ -1,0 +1,191 @@
+:root {
+  --arrow-top;
+  --arrow-left;
+}
+
+body
+{
+background-image:url('Football-field-clipart-soccer-field.jpg');
+background-size: 100% 100%;
+background-repeat:no-repeat;
+background-attachment: fixed;
+
+}
+
+#circle
+{
+ box-shadow: 5px 5px 13px black;
+position: absolute;
+background-color: red;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+transform: translate(-50%,-50%);
+}
+
+#circle2
+{
+ box-shadow: 5px 5px 13px black;
+position: absolute;
+background-color: blue;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+transform: translate(-50%,-50%);
+}
+
+#goalkeeper
+{
+ box-shadow: 5px 5px 13px black;
+position: absolute;
+background-color: white;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+top: 275px;
+left: 38px;
+transform: translate(-50%,-50%);
+animation: gmove 4s linear infinite;
+}
+
+#goalkeeper2
+{
+ box-shadow: 5px 5px 13px black;
+position: absolute;
+background-color: white;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+top: 452px;
+left: 1500px;
+transform: translate(-50%,-50%);
+animation: g2move 4s linear infinite;
+}
+
+#football
+{
+  box-shadow: 5px 5px 10px black;
+  width: 25px;
+  height: 25px;
+ background-image: url('football.jpeg');
+background-size: cover;
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 50%;
+}
+
+#arrow
+{
+height: 50px;
+  width: 20px;
+  background-color: black;
+ position: absolute;
+ top: var(--arrow-top);
+  left: var(--arrow-left);
+clip-path: polygon(50% 0% , 100% 40% , 70% 40% , 50% 100% , 30% 40% , 0% 40%);
+   transform-origin:bottom center;
+animation: rotatearrow 3s linear infinite;
+}
+
+.bl{
+            background-color: rgb(52, 156, 226);
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding-top: 17px;
+        }
+ .rd{
+            background-color: rgb(255, 64, 64);
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding-top: 17px;
+        }
+.nm{
+    font-size: 42.5px;
+    font-family: Dubai;
+    font-weight: bold;
+    text-align: left;
+  }
+.score{
+           
+           height: 60px;
+           width: 100px;
+           border-radius: 5px;
+           color: black;
+           font-family: pixel;
+           background-color: white;
+           font-size: 55px;
+           text-align: center;
+           padding-left: 15px;
+           padding-right: 15px;
+           padding-top: 5px;
+           padding-bottom: 5px;
+      }
+       
+.bor{
+        background-color: black;
+        border: 2px solid white;
+        width:20px;
+        padding-left: 2px;
+        padding-right: 2px;
+        color: white;
+        border-radius: 4px;
+        font-family: calibri;
+       }
+        
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pname{
+              background-image: url('cup.gif');
+                background-size: cover;
+                filter: brightness(100%);
+                width: 300px;
+		height: 300px;
+                border: 1px solid black;
+                padding-top: 50px;
+                padding-right: 40px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+                border-radius: 50%;
+                box-shadow: 10px 4px 8px black;
+                position: relative;
+                top: 70px;
+                left: 200px;
+            }
+
+@keyframes rotatearrow
+{
+  to{
+        transform:rotate(360deg);
+      }
+}
+
+@keyframes gmove
+{
+  0%,100% 
+      {
+          top: 275px;      
+      }
+  50%
+       {
+              top: 452px;
+       }
+}
+
+@keyframes g2move
+{
+  0%,100% 
+      {
+               top: 452px; 
+      }
+  50%
+       {
+               top: 275px;   
+       }
+}
